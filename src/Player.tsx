@@ -43,9 +43,9 @@ export const Player= ({recordStart, mediaBlobUrl}:{recordStart: boolean,mediaBlo
   const handleClose =()=> setModalOn(false);
   
   return(
-    <Modal open={modalOn} onClose={handleClose} aria-describedby="Audio player"> 
+    <Modal open={modalOn} onClose={handleClose} aria-label="Audio player" data-testid="mui-modal"> 
       <Box sx={style}>
-          <p className="fileName">{`${parsedBlob}.wav`}</p>
+          <p className="fileName" aria-label="audio file name">{`${parsedBlob}.wav`}</p>
           <audio controls  src={mediaBlobUrl} className="audio-player"/>
       </Box>
     </Modal>

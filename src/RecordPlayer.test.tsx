@@ -5,15 +5,17 @@ import renderer from 'react-test-renderer'
 
 it('Record Player renders correctly at start', () => {
   
-  const mockedSetRecord = jest.fn(()=>{})
-  const mockedSetBlobUrl = jest.fn(()=>"") 
+  const mockSetRecord = jest.fn(()=>{})
+  const mockSetBlobUrl = jest.fn(()=>"") 
   const defaultStateRecord = false;
     
   const tree = renderer
-    .create(<RecordPlayer setRecord={mockedSetRecord} setBlobUrl={mockedSetBlobUrl} recordStart={false}/>)
+    .create(<RecordPlayer setRecord={mockSetRecord} setBlobUrl={mockSetBlobUrl} recordStart={defaultStateRecord}/>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+
 
 
 
