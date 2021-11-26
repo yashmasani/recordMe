@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Record Player renders correctly at start 1`] = `
+<div
+  aria-label="Record Player"
+  className="record-player"
+>
+  <button
+    aria-label="start Recording"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <img
+      alt="Record button"
+      className="player-buttons round-border"
+      src="record-button-svgrepo-com.svg"
+    />
+    <p
+      className="white"
+    >
+      Start
+    </p>
+  </button>
+  <button
+    aria-label="stop Recording"
+    disabled={true}
+    onClick={[Function]}
+  >
+    <img
+      alt="Stop Record Button"
+      className="player-buttons"
+      src="stop-svgrepo-com.svg"
+    />
+    <p>
+      Stop
+    </p>
+  </button>
+</div>
+`;

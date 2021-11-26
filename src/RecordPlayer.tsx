@@ -1,4 +1,4 @@
-import React,{useEffect, FunctionComponent} from 'react';
+import React,{useEffect} from 'react';
 import {useReactMediaRecorder} from 'react-media-recorder';
 import RecordButtonIcon from './assets/svg/record-button-svgrepo-com.svg';
 import stopRecordButtonIcon from './assets/svg/stop-svgrepo-com.svg';
@@ -6,7 +6,6 @@ import {recorderProps} from './Recorder'
 
 interface reactMediaRecorder{
   
-    status: string,
     startRecording: ()=>void,
     stopRecording: ()=>void ,
     mediaBlobUrl: string | null
@@ -17,7 +16,7 @@ interface reactMediaRecorder{
 
 export const RecordPlayer = ({recordStart, setRecord, setBlobUrl}: recorderProps ) =>{
   
-  const {status, startRecording, stopRecording, mediaBlobUrl}:reactMediaRecorder = useReactMediaRecorder({video:false})
+  const {startRecording, stopRecording, mediaBlobUrl}:reactMediaRecorder = useReactMediaRecorder({video:false})
   
   
   
@@ -41,7 +40,7 @@ export const RecordPlayer = ({recordStart, setRecord, setBlobUrl}: recorderProps
   },[mediaBlobUrl])
 
   return(
-    <div className="record-player" aria-label="Record Player">
+    <div className="record-player" aria-label="Record Player">  
         <button onClick={startClicked} aria-label="start Recording" disabled={recordStart}>
             <img alt="Record button" src={RecordButtonIcon} className="player-buttons round-border"/>
             <p className="white">Start</p>  

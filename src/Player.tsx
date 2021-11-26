@@ -42,13 +42,13 @@ export const Player= ({recordStart, mediaBlobUrl}:{recordStart: boolean,mediaBlo
 
   const handleClose =()=> setModalOn(false);
   
-  return(<>
+  return(
     <Modal open={modalOn} onClose={handleClose} aria-describedby="Audio player"> 
       <Box sx={style}>
           <p className="fileName">{`${parsedBlob}.wav`}</p>
           <audio controls  src={mediaBlobUrl} className="audio-player"/>
       </Box>
-    </Modal></>
+    </Modal>
   )
 
 }

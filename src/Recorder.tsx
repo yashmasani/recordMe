@@ -14,6 +14,7 @@ export const Recorder =  ({recordStart, setRecord, setBlobUrl}:recorderProps) =>
   return(
     <div className="recorder">
       <div className={recordStart ? "record-loader" : "record-no-load"} aria-label="recording in progress loader"></div> 
+      <p>{recordStart ? `Recording In Progress` :`Click Start to start Recording`}</p>
       <RecordPlayer  recordStart={recordStart} setRecord={setRecord} setBlobUrl={setBlobUrl}/>
     </div>
     
