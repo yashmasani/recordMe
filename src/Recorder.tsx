@@ -1,17 +1,20 @@
-import React,{useState, FunctionComponent} from 'react';
+import React,{useState, useEffect} from 'react';
 import {RecordPlayer} from './RecordPlayer';
-import './Recorder.css';
+import './assets/css/Recorder.css';
 
-export const Recorder:FunctionComponent =  () => {
-    
+export interface recorderProps {
+    recordStart: boolean,
+    setRecord: (recordStart: boolean)=>void,
+    setBlobUrl: (blobUrl:string)=> void
+}
+
+export const Recorder =  ({recordStart, setRecord, setBlobUrl}:recorderProps) => {
   
-  const [recordStarted, setRecordStarted] = useState(false)
 
   return(
-    <div>
-      {/** Progress Bar with Animation  -- keeps moving until stop button  **/}
-      <div className={recordStarted ? "record-loader" : "record-no-load"} aria-label="recording in progress loader"></div>
-      <RecordPlayer  recordStart={recordStarted} setRecord={setRecordStarted} />
+    <div className="recorder">
+      <div className={recordStart ? "record-loader" : "record-no-load"} aria-label="recording in progress loader"></div> 
+      <RecordPlayer  recordStart={recordStart} setRecord={setRecord} setBlobUrl={setBlobUrl}/>
     </div>
     
   )

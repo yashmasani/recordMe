@@ -3,13 +3,20 @@
     100% { transform: scale(1); opacity: 0;}
 }
 
+.recorder{
+    margin: 10%;
+}
+
 .record-no-load {
-    width:10rem;
-    height:10rem;
+    width:10em;
+    height:10em;
     display: inline-block;
     position:relative;
-    border: 2px solid black;
     border-radius: 50%;
+    background-image: url('../svg/microphone-svgrepo-com.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .record-loader {
@@ -24,7 +31,7 @@
     width : 10rem;
     height: 10rem;
     border-radius: 50%; 
-    border:2px solid black;
+    border:2px solid white;
     position: absolute;
     left:0;
     top: 0;
@@ -34,4 +41,20 @@
 .record-loader::after {
     animation-delay: 1s;
 } 
+
+.record-player {
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.white-font{
+    color:white
+}
+
+button>img:hover{
+  background-color:white;
+  transition: all 0.5s ease;
+}
+
                                                                                                                                                
